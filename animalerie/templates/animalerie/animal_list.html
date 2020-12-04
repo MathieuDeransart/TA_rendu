@@ -1,0 +1,33 @@
+{% extends 'animalerie/base.html' %}
+
+{% block content %}
+{% for animal in animaux %}
+    <div class="animal">
+        <h2 class="nom_animal"><a href="{% url 'animal_detail' id_animal=animal.id_animal %}"> {{ animal.id_animal }} </a></h2>
+        <p> État : {{ animal.etat }} <br /> Lieu : {{ animal.lieu }} </p>
+    </div>
+{% endfor %}
+
+
+<form class="controleur">
+    <div class="choix_animal">
+    {% for animal in animaux %}
+        <input type="radio" id="{{ animal.id_animal }}" name="animal" value="{{ animal.id_animal }}">
+        <label for="{{ animal.id_animal }}"> {{ animal.id_animal }} </label><br>
+    {% endfor %}
+    </div>
+    <div class="choix_equipement">
+    {% for equipement in equipements %}
+        <input type="radio" id="{{ equipement.id_equip }}" name="equipement" value="{{ equipement.id_equip }}">
+        <label for="{{ equipement.id_equip }}"> {{ equipement.id_equip }} </label><br>
+    {% endfor %}
+    </div>
+</form>
+
+<form method = "GET">
+    {{ choix_controleur }}
+    <input type = "submit" value = "Submit">
+</form>
+
+
+{% endblock %}

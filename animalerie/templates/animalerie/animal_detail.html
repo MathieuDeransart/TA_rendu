@@ -1,0 +1,12 @@
+{% extends 'animalerie/base.html' %}
+type race photo
+{% block content %}
+    <div class="animal">
+        <h2 class="nom_animal"> {{ animal.id_animal }} </h2>
+        <p class="detail"> Race : {{ animal.race }} <br /> Type : {{ animal.type }}  </p>
+        <p> État : {{ animal.etat }} <br /> Lieu : {{ animal.lieu }} </p>
+        {% if animal.photo %}
+            <!-- <img src="../../static/images/{{animal.photo}}" class="image_animal"> -->
+        {% endif %}
+    </div>
+{% endblock %}
