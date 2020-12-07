@@ -24,12 +24,10 @@ def coucher(animal):
 
 
 def reveiller(animal):
-    print("appelé")
     litiere = Equipement.objects.get(id_equip="litière")
     if animal.etat == "endormi" and litiere.verifie_disponibilite():
         animal.change_lieu(litiere)
         animal.change_etat("affamé")
-        print("boucle if")
 
 
 def action_controleur(animal, action):
@@ -41,7 +39,6 @@ def action_controleur(animal, action):
     elif action == "coucher":
         coucher(animal)
     elif action == "reveiller":
-        print("hey")
         reveiller(animal)
     else:
         print(f"L'action '{action}' n'existe pas")

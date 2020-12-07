@@ -18,9 +18,11 @@ class Equipement(models.Model):
 
     def libere(self):
         self.disponibilite = 'libre'
+        self.save()
 
     def occupe(self):
         self.disponibilite = 'occupe'
+        self.save()
 
 
 liste_etats = ['affamé', 'fatigué', 'repus', 'endormi']
@@ -47,6 +49,7 @@ class Animal(models.Model):
         if etat in liste_etats:
             print("in liste etats")
             self.etat = etat
+            self.save()
 
     def change_lieu(self, lieu):
         print("change lieu")
@@ -54,6 +57,7 @@ class Animal(models.Model):
             print("in lieu dispo")
             self.lieu.libere()
             self.lieu = lieu
+            self.save()
             if lieu.id_equip != "litière":
                 lieu.occupe()
 

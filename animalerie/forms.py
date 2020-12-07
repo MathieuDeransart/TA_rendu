@@ -18,5 +18,5 @@ choix_action = [
 
 
 class ChoixControleur(forms.Form):
-    animal = forms.ChoiceField(choices=choix_animal)
-    action = forms.ChoiceField(choices=choix_action)
+    animal = forms.ChoiceField(choices=choix_animal, widget=forms.RadioSelect)
+    action = forms.ChoiceField(choices=choix_action, widget=forms.RadioSelect)

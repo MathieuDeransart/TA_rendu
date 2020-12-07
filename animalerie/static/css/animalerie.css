@@ -1,7 +1,24 @@
+{% load static %}
+
+@font-face {
+    font-family: 'ArchivoNarrow';
+    src: url({% static 'font/ArchivoNarrow-Regular.ttf'%});
+    src: url({% static 'font/ArchivoNarrow-Regular.ttf'%}) format('truetype'),
+    url({% static 'font/ArchivoNarrow-Regular.otf'%}) format('opentype');
+}
+
+*
+{
+	font-family: ArchivoNarrow, sans-serif;
+}
+
 .animal{
 }
 
 .nom_animal{
+}
+
+.image_animal{
 }
 
 .detail{
@@ -12,8 +29,25 @@
 }
 
 .page-header {
-    background-color: #C25100;
+    background-color: green;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
+h1 a{
+    color: black;
+}
+
+a{
+    color: rgb(100, 100, 100);
+}
+
+.controleur{
+    position: fixed;
+    top: 20%;
+    right: 0;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 40px 40px 40px 40px;
+}
